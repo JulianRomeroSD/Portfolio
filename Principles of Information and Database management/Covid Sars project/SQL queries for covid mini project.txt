@@ -1,0 +1,71 @@
+create database COVID19;
+table covid;
+table sars_2003;
+
+#this is E, This gives the summation of total cases for the whole pandemic
+#the top 5 coutries will be labeled as 'yes' for had a pandemic, otherwise 'no' 
+use COVID19;
+select country, date, Total_cases
+from sars_2003
+where date = '7/9/2003'
+group by country, date
+order by date, Total_cases desc
+limit 5;
+
+#total_cases_for_had_Previous_Epidemic per million
+use COVID19;
+select Had_Previous_Epidemic, sum(Total_cases_per_million), sum(population)
+from covid
+where date = '10/7/2020'
+group by had_Previous_Epidemic;
+
+#total_deaths_for_had_Previous_Epidemic per million
+use COVID19;
+select Had_Previous_Epidemic, sum(Total_cases_per_million),sum(population)
+from covid
+where date = '10/7/2020'
+group by had_Previous_Epidemic;
+
+
+#total_deaths for epidemic
+use COVID19;
+select location, total_deaths
+from covid
+where date = '10/7/2020' && Had_Previous_Epidemic = 'yes'
+group by location, date
+order by total_deaths desc;
+
+#total_cases for epidemic
+use COVID19;
+select location, total_cases
+from covid
+where date = '10/7/2020' && Had_Previous_Epidemic = 'yes'
+group by location, date
+order by total_cases desc;
+
+#total_cases for non epidemic top 10
+use COVID19;
+select location, total_cases
+from covid
+where date = '10/7/2020' && Had_Previous_Epidemic = 'no'
+group by location
+order by total_cases desc
+limit 10;
+
+#total_deaths for non epidemic top 10
+use COVID19;
+select location, total_deaths
+from covid
+where date = '10/7/2020' && Had_Previous_Epidemic = 'no'
+group by location, date
+order by total_deaths desc
+limit 10;
+
+#total_deaths for non epidemic top 10
+use COVID19;
+select location, positive_rate
+from covid
+where date = '10/7/2020' && Had_Previous_Epidemic = 'yes'
+group by location, date
+order by total_deaths desc
+limit 10;
