@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Museums</string>
+    <string name="museum_icon_imageView_contentDescription">ImageView that displays the image of the select museum.</string>
+    <string name="default_text_museum_name">Name not found.</string>
+    <string name="museum_info_activity_name">Museum Info</string>
+    <string name="museum_ticket_prices_header">How many tickets would you like?</string>
+    <string name="default_text_price_per_ticket">Price per ticket not found.</string>
+    <string name="student_tickets_hint">Student Tickets</string>
+    <string name="adult_tickets_hint">Adult Tickets</string>
+    <string name="senior_tickets_hint">Senior Tickets</string>
+    <string name="calculate_button_text">Calculate</string>
+    <string name="total_cost_label">Total Cost</string>
+    <string name="default_text_total_cost">0 USD</string>
+    <string name="natural">American museum of Natural History</string>
+    <string name="guggenheim">Guggenheim Museum</string>
+    <string name="met">Metropolitan Museum of Art</string>
+    <string name="modern">Museum of Modern Art</string>
+    <string name="caption">Pick a museum of your choice</string>
+    <string name="textview">Pick a museum of your choice</string>
+</resources>
